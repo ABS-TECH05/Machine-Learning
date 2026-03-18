@@ -1,0 +1,100 @@
+Line 1: This is sample text for testing file operations.
+Line 2: Python file handling is simple and powerful.
+Line 3: Each line in this file is independent.
+Line 4: This text can be used for reading practice.
+Line 5: File input and output are core concepts.
+Line 6: Learning Python requires hands-on coding.
+Line 7: Text files store data in human-readable form.
+Line 8: Newlines separate one line from another.
+Line 9: This file contains exactly one hundred lines.
+Line 10: You can count lines using readlines().
+Line 11: You can count words using split().
+Line 12: You can count characters using len().
+Line 13: Debugging improves programming skills.
+Line 14: Writing clean code avoids logical errors.
+Line 15: Functions help reuse code efficiently.
+Line 16: Loops process repeated data easily.
+Line 17: Strings are sequences of characters.
+Line 18: Lists store multiple values together.
+Line 19: Python supports dynamic typing.
+Line 20: Indentation defines code blocks.
+Line 21: Errors can be syntax or logical.
+Line 22: Reading files can be done line by line.
+Line 23: Writing files overwrites existing content.
+Line 24: Appending adds content to the end.
+Line 25: Context managers close files automatically.
+Line 26: Always test code with multiple inputs.
+Line 27: Single-line files can hide bugs.
+Line 28: Multi-line files expose logic flaws.
+Line 29: Practice improves understanding.
+Line 30: Code readability matters.
+Line 31: Variable naming should be meaningful.
+Line 32: Avoid reusing variable names.
+Line 33: Lists are iterable objects.
+Line 34: Strings are also iterable.
+Line 35: Iterating over strings gives characters.
+Line 36: Iterating over lists gives elements.
+Line 37: File paths must be correct.
+Line 38: Errors show where code fails.
+Line 39: Tracebacks help locate mistakes.
+Line 40: Python errors are descriptive.
+Line 41: FileNotFoundError occurs if file is missing.
+Line 42: TypeError occurs for wrong data types.
+Line 43: AttributeError occurs for invalid methods.
+Line 44: Logical errors do not crash programs.
+Line 45: Logical errors produce wrong results.
+Line 46: Testing prevents incorrect assumptions.
+Line 47: Reading documentation is helpful.
+Line 48: Practice makes concepts clearer.
+Line 49: Python is widely used in data science.
+Line 50: Python is beginner-friendly.
+Line 51: File merging combines multiple files.
+Line 52: Always use lists for multiple filenames.
+Line 53: Strings should not replace lists.
+Line 54: Counting lines requires line separation.
+Line 55: Counting words requires splitting text.
+Line 56: Counting characters includes spaces.
+Line 57: Newline characters affect counts.
+Line 58: Stripping lines removes extra spaces.
+Line 59: Use strip() carefully.
+Line 60: Use split() wisely.
+Line 61: Python supports generators.
+Line 62: Generators save memory.
+Line 63: Sum can aggregate values.
+Line 64: Len gives the size of objects.
+Line 65: Python is case-sensitive.
+Line 66: File extensions matter.
+Line 67: Text files usually use .txt.
+Line 68: Code files use .py.
+Line 69: Debugging is a critical skill.
+Line 70: Always verify outputs.
+Line 71: Comments explain code logic.
+Line 72: Clean code is easier to maintain.
+Line 73: Errors are part of learning.
+Line 74: Fixing bugs builds confidence.
+Line 75: Python supports multiple paradigms.
+Line 76: Functional programming is supported.
+Line 77: Object-oriented programming is common.
+Line 78: Scripts automate tasks.
+Line 79: Automation saves time.
+Line 80: File handling is used everywhere.
+Line 81: Data processing relies on files.
+Line 82: Logs are stored in text files.
+Line 83: Configurations are often text-based.
+Line 84: Learning basics strengthens foundations.
+Line 85: Foundations matter in advanced topics.
+Line 86: Debugging requires patience.
+Line 87: Rushing causes mistakes.
+Line 88: Practice slowly but consistently.
+Line 89: Repetition builds mastery.
+Line 90: Understanding beats memorization.
+Line 91: Always test edge cases.
+Line 92: Edge cases reveal hidden bugs.
+Line 93: Python errors guide correction.
+Line 94: Reading errors carefully helps.
+Line 95: Writing test files is useful.
+Line 96: This is still sample text.
+Line 97: Almost at the end now.
+Line 98: Two more lines remaining.
+Line 99: One more line to go.
+Line 100: This is the final line of the file.

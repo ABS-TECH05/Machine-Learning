@@ -1,0 +1,8 @@
+2026-01-22 18:15:05 - ArithmeticApp - DEBUG - Adding : 10 + 15 = 25
+2026-01-22 18:15:05 - ArithmeticApp - DEBUG - Adding : 15 - 10= 5
+2026-01-22 18:15:05 - ArithmeticApp - DEBUG - Adding : 10 * 20= 200
+2026-01-22 18:15:05 - ArithmeticApp - DEBUG - Adding : 20 * 10= 2.0
+2026-01-22 18:17:01 - ArithmeticApp - DEBUG - Adding : 10 + 15 = 25
+2026-01-22 18:17:01 - ArithmeticApp - DEBUG - Adding : 15 - 10= 5
+2026-01-22 18:17:01 - ArithmeticApp - DEBUG - Adding : 10 * 20= 200
+2026-01-22 18:17:01 - ArithmeticApp - ERROR - Error : division by zero

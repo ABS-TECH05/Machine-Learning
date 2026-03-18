@@ -1,0 +1,64 @@
+# Neon / Fluorescent Color Palette
+
+neon_green   = "#39FF14"
+neon_blue    = "#00E5FF"
+neon_pink    = "#FF00FF"
+neon_yellow  = "#FFF700"
+neon_orange  = "#FF9100"
+neon_red     = "#FF073A"
+neon_purple  = "#B026FF"
+neon_cyan    = "#00FFF0"
+neon_lime    = "#CCFF00"
+neon_magenta = "#FF1AFF"
+neon_teal    = "#00FFB3"
+neon_violet  = "#8F00FF"
+
+# Soft neon variants (for backgrounds or secondary plots)
+soft_neon_green  = "#8AFF8A"
+soft_neon_blue   = "#7FE9FF"
+soft_neon_pink   = "#FF85FF"
+soft_neon_yellow = "#FFF9A6"
+soft_neon_orange = "#FFB266"
+soft_neon_purple = "#C38BFF"
+
+# Dark neon (for dark themes)
+dark_neon_green  = "#00C000"
+dark_neon_blue   = "#0088CC"
+dark_neon_pink   = "#CC00CC"
+dark_neon_red    = "#CC0033"
+dark_neon_purple = "#6600CC"
+
+
+
+# Pastel
+# Pastel Color Palette
+
+pastel_pink    = "#FFD1DC"
+pastel_blue    = "#AEC6CF"
+pastel_green   = "#B7E4C7"
+pastel_yellow  = "#FFF1A8"
+pastel_purple  = "#D7BDE2"
+pastel_orange  = "#FFCCBC"
+pastel_red     = "#FFB3B3"
+pastel_teal    = "#A8E6E1"
+pastel_lavender= "#E6CCFF"
+pastel_mint    = "#CFFFE5"
+pastel_peach   = "#FFD6A5"
+pastel_sky     = "#BDE0FE"
+pastel_aqua    = "#CDEDF6"
+pastel_rose    = "#FADADD"
+pastel_cream   = "#FFFDD0"
+
+
+# Sea Blue / Ocean Palette
+
+sea_blue_dark   = "#023E8A"   # deep ocean
+sea_blue        = "#0077B6"   # rich sea blue
+sea_blue_light  = "#90DBF4"   # shallow water
+sea_cyan        = "#00B4D8"   # tropical water
+sea_teal        = "#48CAE4"   # blue-green water
+sea_mint        = "#ADE8F4"   # soft ocean foam
+sea_sky         = "#CAF0F8"   # light sky reflection
+sea_navy        = "#03045E"   # deep sea
+sea_turquoise   = "#00F5D4"   # bright tropical
+sea_aqua        = "#4CC9F0"   # crystal water

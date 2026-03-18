@@ -1,0 +1,29 @@
+2026-01-22 14:22:17 - root - DEBUG - This is a debug message.
+2026-01-22 14:22:17 - root - INFO - This is an info message.
+2026-01-22 14:22:17 - root - WARNING - This is a warning message.
+2026-01-22 14:22:17 - root - ERROR - This is an error message.
+2026-01-22 14:22:17 - root - CRITICAL - This is a critical message.DEBUG:root:This is a debug message.
+2026-29-23 14:29:47 - root - DEBUG - This is a debug message.
+2026-29-23 14:29:47 - root - INFO - This is an info message.
+2026-29-23 14:29:47 - root - WARNING - This is a warning message.
+2026-29-23 14:29:47 - root - ERROR - This is an error message.
+2026-29-23 14:29:47 - root - CRITICAL - This is a critical message.2026-01-23 14:47:04,373 - DEBUG - my_logger - This is a debug message.
+2026-47-23 14:47:04 - my_logger - DEBUG - This is a debug message.
+2026-01-23 14:47:04,379 - INFO - my_logger - This is an info message.
+2026-47-23 14:47:04 - my_logger - INFO - This is an info message.
+2026-01-23 14:47:04,379 - WARNING - my_logger - This is a warning message.
+2026-47-23 14:47:04 - my_logger - WARNING - This is a warning message.
+2026-01-23 14:47:04,381 - ERROR - my_logger - This is an error message.
+2026-47-23 14:47:04 - my_logger - ERROR - This is an error message.
+2026-01-23 14:47:04,381 - CRITICAL - my_logger - This is a critacal message.
+2026-47-23 14:47:04 - my_logger - CRITICAL - This is a critacal message.
+2026-57-23 14:57:26 - custom_logger - DEBUG - This is a debug message.
+2026-57-23 14:57:26 - custom_logger - INFO - This is an info message.
+2026-57-23 14:57:26 - custom_logger - WARNING - This is a warning message.
+2026-57-23 14:57:26 - custom_logger - ERROR - This is an error message.
+2026-57-23 14:57:26 - custom_logger - CRITICAL - This is a critical message.
+2026-09-23 15:09:26 - multi_format_logger - DEBUG - This is a debug message.
+2026-09-23 15:09:26 - multi_format_logger - INFO - This is an info message.
+2026-09-23 15:09:26 - multi_format_logger - WARNING - This is a warning message.
+2026-09-23 15:09:26 - multi_format_logger - ERROR - This is an error message.
+2026-09-23 15:09:26 - multi_format_logger - CRITICAL - This is a critical message.

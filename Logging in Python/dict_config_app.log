@@ -1,0 +1,12 @@
+2026-01-24 22:46:29,279 - root - DEBUG - This is a debug message - configure_logging_with_dict - 34
+2026-01-24 22:46:29,283 - root - INFO - This is an info message - configure_logging_with_dict - 35
+2026-01-24 22:46:29,284 - root - WARNING - This is a warning message - configure_logging_with_dict - 36
+2026-01-24 22:46:29,285 - root - ERROR - This is an error message - configure_logging_with_dict - 37
+2026-01-24 22:46:29,286 - root - CRITICAL - This is a critical message - configure_logging_with_dict - 38
+2026-01-24 22:46:59,990 - root - DEBUG - This is a debug message - dict_log_config - 38
+2026-01-24 22:46:59,991 - root - INFO - This is an info message - dict_log_config - 39
+2026-01-24 22:46:59,992 - root - WARNING - This is a warning message - dict_log_config - 40
+2026-01-24 22:46:59,992 - root - ERROR - This is an error message - dict_log_config - 41
+2026-01-24 22:46:59,993 - root - CRITICAL - This is a critical message - dict_log_config - 42
+2026-01-24 23:06:32,666 - root - ERROR - This is an error message - <module> - 4
+2026-01-24 23:06:32,673 - root - CRITICAL - This is a critical message - <module> - 5

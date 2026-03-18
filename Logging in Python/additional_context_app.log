@@ -1,0 +1,5 @@
+2026-01-24 22:27:18,736 - additional_context_logger - DEBUG - This is a debug message - test_func - 16 - UserID: user123 - SessionID: session456
+2026-01-24 22:27:18,737 - additional_context_logger - INFO - This is an info message - test_func - 17 - UserID: user123 - SessionID: session456
+2026-01-24 22:27:18,737 - additional_context_logger - WARNING - This is a warning message - test_func - 18 - UserID: user123 - SessionID: session456
+2026-01-24 22:27:18,738 - additional_context_logger - ERROR - This is an error message - test_func - 19 - UserID: user123 - SessionID: session456
+2026-01-24 22:27:18,738 - additional_context_logger - CRITICAL - This is a critical message - test_func - 20 - UserID: user123 - SessionID: session456
