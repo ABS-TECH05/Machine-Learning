@@ -1,0 +1,22 @@
+SIMPLE STEPS TO SEE MLOPS WORKING
+
+1) Install:
+   pip install -r requirements.txt
+
+2) Run pipeline:
+   dvc repro
+
+3) See metrics:
+   dvc metrics show
+   or open reports/metrics.json
+
+4) See MLflow:
+   mlflow ui --backend-store-uri ./mlruns --port 5001
+   open http://127.0.0.1:5001
+
+5) Run website:
+   python application.py
+   open http://127.0.0.1:5000/predictdata
+
+6) Run tests:
+   pytest -q

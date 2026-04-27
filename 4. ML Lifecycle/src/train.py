@@ -3,6 +3,7 @@ import json
 import os
 import pickle
 
+import mlflow
 import pandas as pd
 import yaml
 from sklearn.linear_model import Ridge
@@ -48,20 +49,38 @@ def train(params_path: str = "params.yaml") -> None:
         "rmse": float(mean_squared_error(y_test, preds) ** 0.5),
         "train_rows": int(X_train.shape[0]),
         "test_rows": int(X_test.shape[0]),
-        "features": FEATURES,
+        "feature_count": len(FEATURES),
     }
 
     os.makedirs("models", exist_ok=True)
     os.makedirs("reports", exist_ok=True)
+    os.makedirs("mlruns", exist_ok=True)
 
-    with open("models/ridge.pkl", "wb") as f:
-        pickle.dump(model, f)
+    mlflow.set_tracking_uri("file:./mlruns")
+    mlflow.set_experiment("forest-fire-ridge")
 
-    with open("models/scaler.pkl", "wb") as f:
-        pickle.dump(scaler, f)
+    with mlflow.start_run():
+        mlflow.log_params({
+            "model": "Ridge",
+            "alpha": alpha,
+            "test_size": test_size,
+            "random_state": random_state,
+            "target": target,
+        })
+        mlflow.log_metrics({k: v for k, v in metrics.items() if isinstance(v, (int, float))})
 
-    with open("reports/metrics.json", "w") as f:
-        json.dump(metrics, f, indent=4)
+        with open("models/ridge.pkl", "wb") as f:
+            pickle.dump(model, f)
+
+        with open("models/scaler.pkl", "wb") as f:
+            pickle.dump(scaler, f)
+
+        with open("reports/metrics.json", "w") as f:
+            json.dump(metrics, f, indent=4)
+
+        mlflow.sklearn.log_model(model, "ridge_model")
+        mlflow.log_artifact("models/scaler.pkl")
+        mlflow.log_artifact("reports/metrics.json")
 
     print("Training complete.")
     print(json.dumps(metrics, indent=4))
