@@ -1,129 +1,82 @@
 # Forest Fire Prediction - MLOps Version
 
-This version adds a clean MLOps structure to your existing Flask project.
+This project now has:
 
-## What was added
-
+- Flask web app
 - Data versioning with DVC
 - Model versioning with DVC
-- Reproducible training pipeline using `dvc.yaml`
-- `params.yaml` for model parameters
-- `reports/metrics.json` for model metrics
-- Cleaner folder structure
-- `/health` endpoint
-- `/predict` JSON API endpoint
-- AWS Elastic Beanstalk compatible `Procfile`
+- Experiment tracking with MLflow
+- Metrics saved in `reports/metrics.json`
+- GitHub Actions CI pipeline
+- Simple tests with Pytest
 
-## Project structure
+---
 
-```text
-.
-├── application.py
-├── requirements.txt
-├── Procfile
-├── params.yaml
-├── dvc.yaml
-├── data/
-│   ├── raw/
-│   └── processed/
-├── models/
-├── reports/
-├── src/
-│   ├── prepare_data.py
-│   └── train.py
-├── templates/
-├── notebooks/
-└── legacy/
-```
-
-## First-time setup
+## 1. Install requirements
 
 ```bash
-python -m venv .venv
-.venv\Scripts\activate
 pip install -r requirements.txt
 ```
 
-## Initialize Git and DVC
+---
 
-```bash
-git init
-dvc init
-```
-
-## Track data and model files with DVC
-
-```bash
-dvc add data/raw/Algerian_forest_fires_cleaned_dataset.csv
-dvc add data/raw/Algerian_forest_fires_dataset_UPDATE.csv
-dvc add models/ridge.pkl
-dvc add models/scaler.pkl
-```
-
-Then commit the small tracking files to Git:
-
-```bash
-git add .
-git commit -m "Add MLOps structure with DVC versioning"
-```
-
-## Reproduce the ML pipeline
+## 2. Run the full MLOps pipeline
 
 ```bash
 dvc repro
 ```
 
-This runs:
+This will:
 
-1. `src/prepare_data.py`
-2. `src/train.py`
-3. saves updated models in `models/`
-4. saves metrics in `reports/metrics.json`
+1. Prepare the data
+2. Train the model
+3. Save the model in `models/`
+4. Save metrics in `reports/metrics.json`
+5. Save MLflow experiment logs in `mlruns/`
 
-## View metrics
+---
+
+## 3. See metrics
 
 ```bash
 dvc metrics show
 ```
 
-## Change model version
+Or open:
 
-Edit `params.yaml`, for example:
-
-```yaml
-model:
-  alpha: 0.5
+```text
+reports/metrics.json
 ```
 
-Then run:
+---
+
+## 4. See MLflow experiment tracking
 
 ```bash
-dvc repro
-git add params.yaml dvc.lock reports/metrics.json
-git commit -m "Tune ridge alpha"
+mlflow ui --backend-store-uri ./mlruns
 ```
 
-## Optional: Add S3 remote for real cloud model/data versioning
+Then open:
 
-Create an S3 bucket first, then:
+```text
+http://127.0.0.1:5000
+```
+
+If your Flask app is already using port 5000, use:
 
 ```bash
-dvc remote add -d storage s3://YOUR-BUCKET-NAME/forest-fire-dvc
-dvc push
-git add .dvc/config
-git commit -m "Add DVC S3 remote"
+mlflow ui --backend-store-uri ./mlruns --port 5001
 ```
 
-Later, on another system:
+Then open:
 
-```bash
-git clone YOUR_REPO_URL
-cd YOUR_REPO
-pip install -r requirements.txt
-dvc pull
+```text
+http://127.0.0.1:5001
 ```
 
-## Run locally
+---
+
+## 5. Run the Flask app locally
 
 ```bash
 python application.py
@@ -135,24 +88,117 @@ Open:
 http://127.0.0.1:5000/predictdata
 ```
 
-## Test JSON API
+Health check:
 
-```bash
-curl -X POST http://127.0.0.1:5000/predict ^
--H "Content-Type: application/json" ^
--d "{\"Temperature\":29,\"RH\":57,\"Ws\":18,\"Rain\":0,\"FFMC\":65.7,\"DMC\":3.4,\"ISI\":1.3,\"Classes\":0,\"Region\":0}"
+```text
+http://127.0.0.1:5000/health
 ```
 
-## AWS Elastic Beanstalk redeploy
+---
 
-After testing locally, zip the project files and upload the new zip to Elastic Beanstalk.
+## 6. Test API prediction
 
-Do not zip the outer folder. Zip the contents inside the project folder.
-
-For Windows PowerShell:
+PowerShell:
 
 ```powershell
-Compress-Archive -Path * -DestinationPath forest-fire-mlops.zip -Force
+curl -Method POST "http://127.0.0.1:5000/predict" `
+-H @{"Content-Type"="application/json"} `
+-Body '{"Temperature":30,"RH":40,"Ws":10,"Rain":0,"FFMC":85,"DMC":20,"ISI":5,"Classes":1,"Region":1}'
 ```
 
-Then upload `forest-fire-mlops.zip` to Elastic Beanstalk as a new application version.
+Git Bash:
+
+```bash
+curl -X POST "http://127.0.0.1:5000/predict" \
+-H "Content-Type: application/json" \
+-d '{"Temperature":30,"RH":40,"Ws":10,"Rain":0,"FFMC":85,"DMC":20,"ISI":5,"Classes":1,"Region":1}'
+```
+
+---
+
+## 7. Version your data and model
+
+First time only:
+
+```bash
+git init
+dvc init
+```
+
+Track raw data and model files:
+
+```bash
+dvc add data/raw/Algerian_forest_fires_cleaned_dataset.csv
+dvc add models/ridge.pkl
+dvc add models/scaler.pkl
+```
+
+Then commit DVC pointer files to Git:
+
+```bash
+git add .
+git commit -m "add mlops pipeline with dvc and mlflow"
+```
+
+---
+
+## 8. Optional: DVC remote storage
+
+This project has a sample local DVC remote in `.dvc/config`:
+
+```text
+../dvc_storage
+```
+
+Push data/model versions there:
+
+```bash
+dvc push
+```
+
+For real cloud storage later, replace it with S3/GDrive/Azure.
+
+Example S3:
+
+```bash
+dvc remote add -d myremote s3://your-bucket-name/path
+dvc push
+```
+
+---
+
+## 9. GitHub Actions
+
+The file below runs the pipeline automatically when you push code:
+
+```text
+.github/workflows/mlops-ci.yml
+```
+
+It runs:
+
+```bash
+dvc repro
+dvc metrics show
+pytest -q
+```
+
+---
+
+## 10. AWS Elastic Beanstalk deployment
+
+For Beanstalk, zip the project contents and upload a new application version.
+
+Important: zip the files inside the project folder, not the outer folder.
+
+Your app entry point is:
+
+```text
+application.py
+```
+
+Your Procfile is:
+
+```text
+web: gunicorn application:application
+```
