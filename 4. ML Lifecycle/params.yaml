@@ -1,0 +1,9 @@
+data:
+  raw_path: data/raw/Algerian_forest_fires_cleaned_dataset.csv
+  processed_path: data/processed/forest_fire_processed.csv
+  target: FWI
+  test_size: 0.25
+  random_state: 42
+
+model:
+  alpha: 1.0

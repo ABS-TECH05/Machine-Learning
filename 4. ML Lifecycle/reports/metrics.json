@@ -1,0 +1,19 @@
+{
+    "r2_score": 0.9842993364555513,
+    "mae": 0.5642305340105691,
+    "mse": 0.6949198918152073,
+    "rmse": 0.8336185529456547,
+    "train_rows": 182,
+    "test_rows": 61,
+    "features": [
+        "Temperature",
+        "RH",
+        "Ws",
+        "Rain",
+        "FFMC",
+        "DMC",
+        "ISI",
+        "Classes",
+        "Region"
+    ]
+}

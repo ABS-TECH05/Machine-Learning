@@ -1,0 +1,25 @@
+stages:
+  prepare:
+    cmd: python src/prepare_data.py --input data/raw/Algerian_forest_fires_cleaned_dataset.csv --output data/processed/forest_fire_processed.csv
+    deps:
+      - src/prepare_data.py
+      - data/raw/Algerian_forest_fires_cleaned_dataset.csv
+    outs:
+      - data/processed/forest_fire_processed.csv
+
+  train:
+    cmd: python src/train.py --params params.yaml
+    deps:
+      - src/train.py
+      - data/processed/forest_fire_processed.csv
+      - params.yaml
+    params:
+      - data.test_size
+      - data.random_state
+      - model.alpha
+    outs:
+      - models/ridge.pkl
+      - models/scaler.pkl
+    metrics:
+      - reports/metrics.json:
+          cache: false
